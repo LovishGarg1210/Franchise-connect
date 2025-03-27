@@ -100,7 +100,9 @@ const Dashboard = () => {
                 ))}
               </Pie>
               <Tooltip />
-              <Legend className="hidden"/>
+               <div className="hidden lg:block">
+    <Legend />
+  </div>
             </PieChart>
           </div>
         </div>
