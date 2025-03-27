@@ -11,7 +11,7 @@ const RegistartionForm = () => {
   const dologin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://franchise-connect-1.onrender.com//franchise/dologin', data);
+      const response = await axios.post('https://franchise-connect-1.onrender.com/franchise/dologin', data);
        alert(response.data.message)
      
      
