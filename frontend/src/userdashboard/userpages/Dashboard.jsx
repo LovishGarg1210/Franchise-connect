@@ -82,7 +82,7 @@ const Dashboard = () => {
         </div>
 
         {/* Expenses Overview Pie Chart */}
-        <div className="bg-white rounded-lg shadow-sm p-4 md:p-6">
+        <div className="bg-white rounded-lg  z-50 shadow-sm p-4 md:p-6">
           <h3 className="text-lg font-semibold mb-4">Expenses Overview</h3>
           <div className="bg-white p-4 rounded-lg shadow-md flex justify-center">
             <PieChart width={400} height={300} className="  md:max-w-full">
@@ -100,7 +100,7 @@ const Dashboard = () => {
                 ))}
               </Pie>
               <Tooltip />
-              <Legend className="hidden md:block" />
+              <Legend className="hidden"/>
             </PieChart>
           </div>
         </div>
