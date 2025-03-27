@@ -18,7 +18,7 @@ function SalesHistory() {
     const fetchData = async () => {
         try {
             const Email = JSON.parse(localStorage.getItem('useremail'));
-            const response = await axios.get("http://localhost:3000/sales/dofindsale");
+            const response = await axios.get("https://franchise-connect-1.onrender.com//sales/dofindsale");
             const response2 = response.data.data.filter((user) => user.email === Email);
             setSalesData(response2);
             setFilteredSalesData(response2);
@@ -30,7 +30,7 @@ function SalesHistory() {
     const handleDelete = async (saleId) => {
         if (window.confirm('Are you sure you want to delete this record?')) {
             try {
-                await axios.delete(`http://localhost:3000/sales/dodeletesale/${saleId}`);
+                await axios.delete(`https://franchise-connect-1.onrender.com//sales/dodeletesale/${saleId}`);
                 fetchData();
             } catch (error) {
                 console.error("Error deleting sale:", error);
@@ -41,7 +41,7 @@ function SalesHistory() {
     const handleUpdate = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:3000/sales/doupdatesale/${selectedSale._id}`, selectedSale);
+            await axios.put(`https://franchise-connect-1.onrender.com//sales/doupdatesale/${selectedSale._id}`, selectedSale);
             setIsUpdateModalOpen(false);
             fetchData();
         } catch (error) {

@@ -53,7 +53,7 @@ function Sales() {
         console.log("Form data before submission:", formData);
 
         try {
-            const response = await axios.post('http://localhost:3000/sales/dosale', formData);
+            const response = await axios.post('https://franchise-connect-1.onrender.com//sales/dosale', formData);
             console.log(response);
             alert("Sale Data Submitted Successfully");
 

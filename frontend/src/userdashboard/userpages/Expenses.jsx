@@ -26,7 +26,7 @@ const Expenses = () => {
   const fetchExpenses = async () => {
     try {
       const userEmail = JSON.parse(localStorage.getItem('useremail'));
-      const response = await axios.get('http://localhost:3000/expense/dofind');
+      const response = await axios.get('https://franchise-connect-1.onrender.com//expense/dofind');
       const filteredExpenses = response.data.data.filter((expense) => expense.email === userEmail);
       setExpenses(filteredExpenses);
     } catch (error) {
@@ -72,7 +72,7 @@ const Expenses = () => {
   const handleAddSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3000/expense/dosave', newExpense);
+      await axios.post('https://franchise-connect-1.onrender.com//expense/dosave', newExpense);
       console.log('New expense added:', newExpense);
       fetchExpenses();  // Fetch updated expenses list
       setIsAddModalOpen(false);  // Close modal
@@ -92,7 +92,7 @@ const Expenses = () => {
   const handleEditSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3000/expense/doupdate/${editExpense._id}`, editExpense);
+      await axios.put(`https://franchise-connect-1.onrender.com//expense/doupdate/${editExpense._id}`, editExpense);
       console.log('Expense updated:', editExpense);
       fetchExpenses();  // Fetch updated expenses list
       setIsEditModalOpen(false);  // Close modal
@@ -104,7 +104,7 @@ const Expenses = () => {
   // Handle expense deletion
   const handleDelete = async (_id) => {
     try {
-      await axios.delete(`http://localhost:3000/expense/dodelete/${_id}`);
+      await axios.delete(`https://franchise-connect-1.onrender.com//expense/dodelete/${_id}`);
       console.log('Expense deleted:', _id);
       fetchExpenses();  // Fetch updated expenses after delete
     } catch (error) {
