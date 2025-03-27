@@ -24,7 +24,7 @@ const Sidebar = ({setIsOpen,isOpen}) => {
   ]
 
   return (
-    <div className={`min-h-screen md:static absolute top-0 -left-20 bg-gray-900  text-white transition-all duration-300 ${isOpen ? ' -left-1 w-full md:w-64 w-full z-50  ' : 'w-20'}`} onClick={() => setIsOpen(!isOpen)} >
+    <div className={`min-h-screen md:static absolute top-0 -left-20 bg-gray-900  text-white transition-all duration-300 ${isOpen ? ' -left-0 w-full md:w-64 w-full z-50  ' : 'w-20'}`} onClick={() => setIsOpen(!isOpen)} >
       <div className="flex items-center justify-between p-4">
         <h2 className={`font-bold text-xl ${!isOpen && 'hidden'}`}>Franchise Hub</h2>
         <button onClick={() => setIsOpen(!isOpen)} className="p-2 hover:bg-gray-800 rounded">
