@@ -22,7 +22,7 @@ export default function ApplicationForm() {
   const handleSubmit =async(e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://franchise-connect-1.onrender.com//applicant/dosend', formData);
+      const response = await axios.post('https://franchise-connect-1.onrender.com/applicant/dosend', formData);
       
 
       // Handle success

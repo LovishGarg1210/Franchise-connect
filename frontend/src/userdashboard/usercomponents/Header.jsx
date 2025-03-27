@@ -12,7 +12,7 @@ const Header = ({setIsOpen,isOpen}) => {
   useEffect(()=>{
     const dofetchdata=async()=>{
       try{
-        const response=await axios.get('https://franchise-connect-1.onrender.com//applicant/dofetch');
+        const response=await axios.get('https://franchise-connect-1.onrender.com/applicant/dofetch');
          const {data} = response.data;
          setData(data.find((user)=> (user.iDEmail === email.toString())))
       }catch(error){

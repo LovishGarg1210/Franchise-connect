@@ -16,7 +16,7 @@ function EmployeeCard({ employee, onEdit, onDelete }) {
         <div className="max-w-xs w-full bg-white shadow-md rounded-lg overflow-hidden">
             <div className="p-4">
                 <img
-                    src={`https://franchise-connect-1.onrender.com//images/${employee.photo}`}
+                    src={`https://franchise-connect-1.onrender.com/images/${employee.photo}`}
                     alt={employee.name}
                     className="w-24 h-24 rounded-full mx-auto mb-4"
                 />
@@ -63,7 +63,7 @@ function EmployeeList() {
     const fetchEmployees = async () => {
         try {
             const email = getStoredEmail();
-            const response = await axios.get('https://franchise-connect-1.onrender.com//Employee/dofind');
+            const response = await axios.get('https://franchise-connect-1.onrender.com/Employee/dofind');
             const filteredEmployees = response.data.data.filter((user) => user.email === email);
             setEmployees(filteredEmployees);
         } catch (error) {
@@ -136,7 +136,7 @@ function EmployeeList() {
 
             if (editingEmployee) {
                 await axios.put(
-                    `https://franchise-connect-1.onrender.com//Employee/doupdate/${editingEmployee._id}`,
+                    `https://franchise-connect-1.onrender.com/Employee/doupdate/${editingEmployee._id}`,
                     form,
                     {
                         headers: { 'Content-Type': 'multipart/form-data' }
@@ -144,7 +144,7 @@ function EmployeeList() {
                 );
             } else {
                 await axios.post(
-                    'https://franchise-connect-1.onrender.com//Employee/dosend',
+                    'https://franchise-connect-1.onrender.com/Employee/dosend',
                     form,
                     {
                         headers: { 'Content-Type': 'multipart/form-data' }
@@ -181,7 +181,7 @@ function EmployeeList() {
         if (window.confirm('Are you sure you want to delete this employee?')) {
             setIsLoading(true);
             try {
-                await axios.delete(`https://franchise-connect-1.onrender.com//Employee/dodelete/${id}`);
+                await axios.delete(`https://franchise-connect-1.onrender.com/Employee/dodelete/${id}`);
                 await fetchEmployees();
             } catch (error) {
                 console.error('Error deleting employee:', error);
