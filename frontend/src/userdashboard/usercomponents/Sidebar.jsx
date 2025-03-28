@@ -43,7 +43,7 @@ const Sidebar = ({setIsOpen,isOpen}) => {
             to={item.path}
             className={`flex items-center px-4 py-3 ${
               location.pathname === item.path ? 'bg-gray-800' : 'hover:bg-gray-800'
-            }`}
+            }` } onClick={() => setIsOpen(!isOpen)}
           >
             <span className="mr-4">{item.icon}</span>
             <span className={`${!isOpen && 'hidden'}`}>{item.label}</span>

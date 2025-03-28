@@ -9,7 +9,8 @@ const Settings = () => {
   // Handle Logout action
   const handleLogout = () => {
     // Clear user session (e.g., remove JWT or user data from localStorage)
-    localStorage.removeItem('useremail'); // Assuming you store the user's email or token in localStorage
+    localStorage.removeItem('useremail'); 
+    localStorage.removeItem('jtoken')// Assuming you store the user's email or token in localStorage
     // Redirect to login page after logout
     navigate('/login'); // Replace '/login' with the actual route path for login page
   };

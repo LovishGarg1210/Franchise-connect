@@ -2,17 +2,20 @@ import React, { useState,useEffect } from 'react';
 import { Bell, User } from 'lucide-react';
 import axios from 'axios';
 import { Menu } from 'lucide-react';
+import { data } from 'react-router-dom';
 
 
 
 const Header = ({setIsOpen,isOpen}) => {
   const [Data,setData]=useState(null)
+  console.log("data",Data)
   console.log(Data)
   const email = JSON.parse(localStorage.getItem('useremail'))
   useEffect(()=>{
     const dofetchdata=async()=>{
       try{
         const response=await axios.get('https://franchise-connect-1.onrender.com/applicant/dofetch');
+        console.log("response",response)
          const {data} = response.data;
          setData(data.find((user)=> (user.iDEmail === email.toString())))
       }catch(error){
@@ -30,7 +33,12 @@ const Header = ({setIsOpen,isOpen}) => {
         <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 hover:bg-gray-800 rounded">
                   <Menu size={20} />
                 </button>
-        <h1 className="  text-lg md:text-2xl font-semibold text-gray-800">Welcome, Manager</h1>
+                <h1 className="text-lg md:text-2xl font-semibold text-gray-800">
+  <span className="block md:hidden">{`Welcome ${Data?.firstName}`}</span>
+  <span className="hidden md:block">Welcome Manager</span>
+</h1>
+
+
 
         <div className="flex items-center space-x-4">
           <button className="p-2 hover:bg-gray-100 rounded-full relative">

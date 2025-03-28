@@ -15,9 +15,13 @@ const RegistartionForm = () => {
        alert(response.data.message)
      
      
-       console.log("aja",response.data.user)
-       if(response.data.user.iDEmail)
-         localStorage.setItem("useremail",JSON.stringify(response.data.user.iDEmail))
+       if(response.data.user.iDEmail && response.data.jtoken){
+        localStorage.setItem("useremail",JSON.stringify(response.data.user.iDEmail))
+        localStorage.setItem("jtoken",JSON.stringify(response.data.jtoken))
+
+       }
+         
+        
      
         
 
